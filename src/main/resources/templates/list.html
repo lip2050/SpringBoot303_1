@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Todo List</h1>
+<a href="/add">Add a Todo List</a><br />
+<table>
+    <tr>
+        <th>Task Name</th>
+        <th>Due Date</th>
+        <td>Actions</td>
+    </tr>
+    <tr th:each="todoList : ${todolists}">
+        <td th:text="${course.taskName}"></td>
+        <td th:text="${course.dueDate}"></td>
+        <td>
+            <a th:href="@{/update/{id}(id=${course.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${course.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
+        </td></tr>
+</table>
+</body>
+</html>
