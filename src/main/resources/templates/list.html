@@ -13,13 +13,13 @@
         <th>Due Date</th>
         <td>Actions</td>
     </tr>
-    <tr th:each="todoList : ${todolists}">
-        <td th:text="${course.taskName}"></td>
-        <td th:text="${course.dueDate}"></td>
+    <tr th:each="todoList : ${todoLists}">
+        <td th:text="${todoList.taskName}"></td>
+        <td th:text="${todoList.dueDate}"></td>
         <td>
-            <a th:href="@{/update/{id}(id=${course.id})}">Update</a> -
-            <a th:href="@{/detail/{id}(id=${course.id})}">Details</a> -
-            <a th:href="@{/delete/{id}(id=${course.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${todoList.id})}">Update</a> -
+            <a th:href="@{/detail/{id}(id=${todoList.id})}">Details</a> -
+            <a th:href="@{/delete/{id}(id=${todoList.id})}">Delete</a>
         </td></tr>
 </table>
 </body>
